@@ -1,19 +1,29 @@
 # When done, submit this entire file to the autograder.
 
 # Part 1
-
-def sum arr
-return 0
+def sum(array)
+  array.inject(0, :+)
 end
 
-def max_2_sum arr
-  # YOUR CODE HERE
+def max_2_sum(array)
+  if array.empty?
+    return 0
+  elsif array.count==1
+      return array[0]
+else
+    array.sort! { |x, y, *| return x + y }
+  end
 end
 
-def sum_to_n? arr, n
-  # YOUR CODE HERE
-end
+def sum_to_n?(array, n)
+  if array.empty?
+  return false
+  else array.count==1
+  return false
 
+   
+  end
+end
 # Part 2
 
 def hello(name)
