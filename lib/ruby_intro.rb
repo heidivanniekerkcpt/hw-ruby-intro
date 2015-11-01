@@ -5,20 +5,26 @@ def sum(array)
   array.inject(0, :+)
 end
 
-def max_2_sum(array)
-  if array.empty?
+def max_2_sum arr
+  if arr.empty?
     return 0
-  elsif array.count==1
-      return array[0]
+  elsif arr.count==1
+     return arr[0]
 else
-    array.sort! { |x, y, *| return x + y }
+  sorted_array = arr.sort
+sorted_array[-1] + sorted_array[-2]
+
   end
 end
 
 def sum_to_n?(array, n)
-  if array.empty?
+  if array.any? { |x| x + x == n }
+    return true
+  elsif array.empty?
   return false
-  else array.count==1
+  elsif array.count==1
+  return false
+else
   return false
 
    
@@ -27,15 +33,23 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, " + "#{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if /[^aieouAIEOU0-9]*/.match("#{s}")
+    return true
+  else
+    return false
+end
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+if s.to_i % 4 == 0
+    return true
+  else 
+    return false
+  end
 end
 
 # Part 3
